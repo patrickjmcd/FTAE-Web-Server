@@ -1,0 +1,132 @@
+<!--OverrideMailer#daily_report-->
+
+<%= @greeting %> <!--find me in app/views/app/views/override_mailer/daily_report.text.erb-->
+
+
+<style>
+#alarms
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+#alarms td, #alarms th 
+{
+font-size:1em;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+#alarms th 
+{
+font-size:1.1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#ffffff;
+}
+#alarms tr.alt td 
+{
+color:#000000;
+background-color:#EAF2D3;
+}
+</style>
+
+<h1>Overridden Alarms</h1>
+
+
+
+
+<% if @overrides.last24.count > 0 %>
+
+    <table id="alarms">
+      <tr>
+        <!--<th>Eventid</th>-->
+        <th>Sourcename</th>
+        <!--<th>Sourcepath</th>
+        <th>Sourceid</th>
+        <th>Servername</th>
+        <th>Tickstimestamp</th>-->
+        <th>Eventtimestamp</th>
+        <!--<th>Eventcategory</th>-->
+        <th>Severity</th>
+        <!--<th>Priority</th>-->
+        <th>Message</th>
+        <!--<th>Conditionname</th>
+        <th>Subconditionname</th>-->
+        <th>Alarmclass</th>
+        <th>Active</th>
+        <!--<th>Acked</th>
+        <th>Effdisabled</th>
+        <th>Disabled</th>
+        <th>Effsuppressed</th>
+        <th>Suppressed</th>
+        <th>Personid</th>
+        <th>Changemask</th>
+        <th>Inputvalue</th>
+        <th>Limitvalue</th>
+        <th>Quality</th>
+        <th>Eventassociationid</th>-->
+        <th>Usercomment</th>
+        <!--<th>Usercomputerid</th>
+        <th>Tag1value</th>
+        <th>Tag2value</th>
+        <th>Tag3value</th>
+        <th>Tag4value</th>-->
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @overrides.last24.each do |event| %>
+      <% if event.active == true %> 
+      <tr>
+        <!--<td><%= event.eventid %></td>-->
+        <td><%= event.sourcename %></td>
+        <!--<td><%= event.sourcepath %></td>
+        <td><%= event.sourceid %></td>
+        <td><%= event.servername %></td>
+        <td><%= event.tickstimestamp %></td>-->
+        <td><% t =event.eventtimestamp.in_time_zone("Central Time (US & Canada)") %>
+            <%= t.strftime("%m/%d/%Y %I:%M%p")  %></td>
+        <!--<td><%= event.eventcategory %></td>-->
+        <td><%= event.severity %></td>
+        <!--<td><%= event.priority %></td>-->
+        <td><%= event.message %></td>
+        <!--<td><%= event.conditionname %></td>
+        <td><%= event.subconditionname %></td>-->
+        <td><%= event.alarmclass %></td>
+        <td><%= event.active %></td>
+        <!--<td><%= event.acked %></td>
+        <td><%= event.effdisabled %></td>
+        <td><%= event.disabled %></td>
+        <td><%= event.effsuppressed %></td>
+        <td><%= event.suppressed %></td>
+        <td><%= event.personid %></td>
+        <td><%= event.changemask %></td>
+        <td><%= event.inputvalue %></td>
+        <td><%= event.limitvalue %></td>
+        <td><%= event.quality %></td>
+        <td><%= event.eventassociationid %></td>-->
+        <td><%= event.usercomment %></td>
+        <!--<td><%= event.usercomputerid %></td>
+        <td><%= event.tag1value %></td>
+        <td><%= event.tag2value %></td>
+        <td><%= event.tag3value %></td>
+        <td><%= event.tag4value %></td>-->
+        <td><%= link_to 'View Data', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <!--<td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+            
+            <%end %>
+        <% end %>
+
+    </table>
+<% else %>
+    <h1> You're in luck! No overrides in the last 24 hours!</h1>
+<% end %>
+<br />
+
+<!--<%= link_to 'New Event', new_event_path %>-->
+

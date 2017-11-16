@@ -1,0 +1,2 @@
+class ProblemDeviceController < ApplicationController
+end

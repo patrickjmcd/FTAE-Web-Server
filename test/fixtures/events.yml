@@ -1,0 +1,69 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  eventid: MyString
+  sourcename: MyString
+  sourcepath: MyString
+  sourceid: MyString
+  servername: MyString
+  tickstimestamp: MyString
+  eventtimestamp: 2012-12-05 12:05:33
+  eventcategory: MyString
+  severity: 1
+  priority: 1
+  message: MyString
+  conditionname: MyString
+  subconditionname: MyString
+  alarmclass: MyString
+  active: false
+  acked: false
+  effdisabled: false
+  disabled: false
+  effsuppressed: false
+  suppressed: false
+  personid: MyString
+  changemask: 1
+  inputvalue: 1.5
+  limitvalue: 1.5
+  quality: 1
+  eventassociationid: MyString
+  usercomment: MyString
+  usercomputerid: MyString
+  tag1value: MyString
+  tag2value: MyString
+  tag3value: MyString
+  tag4value: MyString
+
+two:
+  eventid: MyString
+  sourcename: MyString
+  sourcepath: MyString
+  sourceid: MyString
+  servername: MyString
+  tickstimestamp: MyString
+  eventtimestamp: 2012-12-05 12:05:33
+  eventcategory: MyString
+  severity: 1
+  priority: 1
+  message: MyString
+  conditionname: MyString
+  subconditionname: MyString
+  alarmclass: MyString
+  active: false
+  acked: false
+  effdisabled: false
+  disabled: false
+  effsuppressed: false
+  suppressed: false
+  personid: MyString
+  changemask: 1
+  inputvalue: 1.5
+  limitvalue: 1.5
+  quality: 1
+  eventassociationid: MyString
+  usercomment: MyString
+  usercomputerid: MyString
+  tag1value: MyString
+  tag2value: MyString
+  tag3value: MyString
+  tag4value: MyString

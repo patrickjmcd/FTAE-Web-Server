@@ -1,0 +1,87 @@
+<h1>Listing events</h1>
+
+<table>
+  <tr>
+    <!--<th>Eventid</th>-->
+    <th>Sourcename</th>
+    <!--<th>Sourcepath</th>
+    <th>Sourceid</th>
+    <th>Servername</th>
+    <th>Tickstimestamp</th>-->
+    <th>Eventtimestamp</th>
+    <!--<th>Eventcategory</th>-->
+    <th>Severity</th>
+    <!--<th>Priority</th>-->
+    <th>Message</th>
+    <!--<th>Conditionname</th>
+    <th>Subconditionname</th>-->
+    <th>Alarmclass</th>
+    <th>Active</th>
+    <!--<th>Acked</th>
+    <th>Effdisabled</th>
+    <th>Disabled</th>
+    <th>Effsuppressed</th>
+    <th>Suppressed</th>
+    <th>Personid</th>
+    <th>Changemask</th>-->
+    <th>Inputvalue</th>
+    <th>Limitvalue</th>
+    <!--<th>Quality</th>
+    <th>Eventassociationid</th>-->
+    <th>Usercomment</th>
+    <th>Usercomputerid</th>
+    <th>Tag1value</th>
+    <th>Tag2value</th>
+    <th>Tag3value</th>
+    <th>Tag4value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <% if event.active == true %>  
+  <tr>
+    <!--<td><%= event.eventid %></td>-->
+    <td><%= event.sourcename %></td>
+    <!--<td><%= event.sourcepath %></td>
+    <td><%= event.sourceid %></td>
+    <td><%= event.servername %></td>
+    <td><%= event.tickstimestamp %></td>-->
+    <td><%= event.eventtimestamp %></td>
+    <!--<td><%= event.eventcategory %></td>-->
+    <td><%= event.severity %></td>
+    <!--<td><%= event.priority %></td>-->
+    <td><%= event.message %></td>
+    <!--<td><%= event.conditionname %></td>
+    <td><%= event.subconditionname %></td>-->
+    <td><%= event.alarmclass %></td>
+    <td><%= event.active %></td>
+    <!--<td><%= event.acked %></td>
+    <td><%= event.effdisabled %></td>
+    <td><%= event.disabled %></td>
+    <td><%= event.effsuppressed %></td>
+    <td><%= event.suppressed %></td>
+    <td><%= event.personid %></td>
+    <td><%= event.changemask %></td>-->
+    <td><%= event.inputvalue %></td>
+    <td><%= event.limitvalue %></td>
+    <!--<td><%= event.quality %></td>
+    <td><%= event.eventassociationid %></td>-->
+    <td><%= event.usercomment %></td>
+    <td><%= event.usercomputerid %></td>
+    <td><%= event.tag1value %></td>
+    <td><%= event.tag2value %></td>
+    <td><%= event.tag3value %></td>
+    <td><%= event.tag4value %></td>
+    <td><%= link_to 'Show', event %></td>
+    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <%end %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event', new_event_path %>
